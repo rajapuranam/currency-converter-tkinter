@@ -66,7 +66,7 @@ currency_frame.pack(fill="both", expand=1)
 my_notebook.add(convert_frame, text="Convert")
 my_notebook.add(currency_frame, text="Currencies")
 
-# Covert Tab
+# Convert Tab
 take_input = LabelFrame(convert_frame, text='')
 take_input.pack(pady=30)
 
@@ -99,15 +99,11 @@ to_amt = Label(show_result, text='', font=("Bell MT", 18))
 to_amt.grid(row=0, column = 2, pady=20, padx=40)
 
 # Currencies Tab
-# For spacing in second tab
 Label(currency_frame, text="", width=70).pack()
-
 Label(currency_frame, text='CURRENCIES', font=("Bell MT", 18)).pack(pady=10)
-######################################################
 
 currency_details = cd.get_currency_details()
 currency_details.sort(key=lambda item: item['country'])
-# print(currency_details[0])
 
 frame_list_scrollbar = Frame(currency_frame)
 
@@ -126,6 +122,6 @@ for ind, item in enumerate(currency_details):
 	curr_list.insert(END, f"  Currency: {item['currency']}")
 	curr_list.insert(END, '\n')
 
-# STABLE - DONOT TOUCH
 Label(currency_frame, text="", height=70).pack()
+
 win.mainloop()
